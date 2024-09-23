@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Your Portfolio</h2>
+  <ul>
+    {% for stock in portfolio.stocks.all %}
+      <li>{{ stock.symbol }} - {{ stock.name }} - ${{ stock.price }} - {{ stock.market }}</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'add_stock' %}">Add More Stocks</a>
+{% endblock %}
